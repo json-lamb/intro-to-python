@@ -22,7 +22,7 @@ async def hello_world():
     return {"message": "Hello, World!"}
 
 @app.get("/about-me")
-async def hello_world():
+async def about_me():
     return {"first_name": f_name,
             "last_name": l_name,
             "favorite_foods": fav_foods,
