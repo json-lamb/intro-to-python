@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me!</title>
+</head>
+<body>
+    <h1 id="about-me"></h1>
+    <script>
+        async function fetchAbout() {
+            try {
+                const response = await fetch("http://localhost:8000/about-me");
+                const data = await response.json();
+                document.getElementById("about-me").innerText = data.first_name + " " + data.last_name;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        fetchAbout();
+    </script>
+</body>
+</html>
